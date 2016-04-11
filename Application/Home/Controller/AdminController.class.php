@@ -16,7 +16,15 @@ class AdminController extends Controller{
                 echo "<script>alert('输入不能为空');history.back(-1)</script>";
                 exit;
             }
-
+            if(I('post.name') != ''){
+                $db = M('Admin');
+                $where['name'] = I('post.name');
+                $check = $db->where($where)->select();
+                if($check){
+                    echo "<script>alert('该用户已存在');history.back(-1)</script>";
+                    exit;
+                }
+            }
             if(I('post.password') == I('post.rpassword')){
                 $admin = D('Admin');
                 $name = I('post.name');
