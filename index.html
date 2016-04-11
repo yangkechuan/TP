@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="jquery-2.2.3.min.js"></script>
+<input type="text" id="text">
+<button onclick="run()">按钮</button>
+
+<p id="pid"></p>
+<script>
+
+    var time = setInterval("getTime()",1000);
+    function getTime(){
+        var toady = new Date();
+        document.getElementById("text").value = toady.toLocaleTimeString();
+    }
+    function run(){
+        clearInterval(time);
+    }
+
+
+</script>
+
+</body>
+</html>
