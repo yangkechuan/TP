@@ -16,7 +16,7 @@ class AdminModel extends Model{
 
     public function adminAdd($name,$password){
         $data['name'] = $name;
-        $data['password'] = $password;
+        $data['password'] = md5($password);
         $data['add_time'] = date('Y-m-d');
         return $this->model->add($data);
     }

@@ -29,8 +29,7 @@ class AdminController extends Controller{
                 $admin = D('Admin');
                 $name = I('post.name');
                 $password = I('post.password');
-                $MD5password = md5($password);
-                $admin->adminAdd($name,$MD5password);
+                $admin->adminAdd($name,$password);
                 $this->success('添加成功','/Home/Admin/adminList',3);
             }
             else{
