@@ -18,7 +18,7 @@ class UserController extends Controller{
     public function userAdd(){
         if(IS_POST){
             if(I('post.uid') == '' || I('post.name') == ''){
-                echo "<script>alert('ID或密码不能为空');history.back(-1);</script>";
+                echo "<script>alert('ID或名字不能为空');history.back(-1);</script>";
                 exit;
             }
             $uid  = I('post.uid');
