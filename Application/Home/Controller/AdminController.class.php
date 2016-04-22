@@ -44,7 +44,7 @@ class AdminController extends Controller{
     public function adminList(){
         $admin  = D('Admin');
         $list = $admin->adminList();
-        $this->assign('list',json_encode($list));
+        $this->assign('list',$list);
         $this->display();
     }
 }
